@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/crowd/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowd/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
