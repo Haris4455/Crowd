@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authy.urls')),
     path('post/', include('post.urls')),
-    path('finduser/', include('finduser.urls')),
+
     path('user/', include('authy.urls')),
     path('direct/', include('direct.urls')),
     path('askcrowd/', include('askcrowd.urls')),
