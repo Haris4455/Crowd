@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from .import views
 
-
+from finduser.urls import path
 from authy.views import UserProfile, UserProfileFavorites, follow
 
 urlpatterns = [
