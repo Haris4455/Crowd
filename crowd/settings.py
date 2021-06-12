@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'authy',
     'post',
+    'finduser',
     'comment',
     'direct',
     'notifications',
