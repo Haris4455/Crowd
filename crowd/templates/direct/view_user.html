@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    .input{
+    max-width: 50%;
+    input-align: center;
+    }
+    .pagination-link active{
+
+    }
+    .notification.is-primary {
+    background-color: whitesmoke;
+    color: black;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    }
+    .content{
+      text-decoration: none;
+    }
+    .notification a:not(.button):not(.dropdown-item) {
+    color: blue;
+    text-decoration: NONE;
+    margin-right: 20px;
+     }
+
+     span { font-size: 1.5em;}
+     span b { font-size:70%; font-weight: Normal }
+     .input, .textarea {
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    width: 100%;
+    margin-left: 280px;
+}
+
+}
+
+</style>
+
+<div class="container py-5">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form>
+                    <div class="input-group">
+                        <input type="text" name="q" class="input"  placeholder="Search users..." value="{{ request.GET.q }}">
+                        <button class="button is-success" type="submit" id="button-addon2">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div class="column is-one-quarter">
+
+{% for user in users %}
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+          {% if user.profile.picture %}
+            <img src="{{ user.profile.picture.url }}" alt="Placeholder image">
+          {% else %}
+            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+          {% endif %}
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ user.profile.first_name }} {{ user.profile.last_name }}</strong><small>@{{ user.username }}</small>
+        </p>
+        <a href="{% url 'profile' user.username %}" class="button is-info">View Profile</a>
+      </div>
+    </div>
+  </article>
+</div>
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
