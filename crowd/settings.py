@@ -25,7 +25,7 @@ SECRET_KEY = 'wkpwid&=r9wp2nl9jyr_%66zjgq4fku9*%g%^%-4iijga+t2lg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
 
-ALLOWED_HOSTS = ['usacrowd.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['usacrowd.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -40,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'authy',
     'post',
+    'finduser',
     'comment',
     'direct',
     'notifications',
     'stories',
-    'finduser',
     'django_celery_beat',
     'askcrowd',
     'django_extensions',
