@@ -1,1 +1,1 @@
-web: gunicorn crowd.wsgi:app
+web: gunicorn crowd.wsgi
