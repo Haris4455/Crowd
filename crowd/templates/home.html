@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block title %} Ask Question {% endblock %}
+{% block content %}
+<style>
+    /* ===========================
+   ====== Search Box ======
+   =========================== */
+
+.search
+{
+	border: 2px solid #48c774;
+	overflow: auto;
+	width: 67%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.search input[type="text"]
+{
+	border: 0px;
+	width: 85%;
+	padding: 10px 10px;
+}
+
+.search input[type="text"]:focus
+{
+	outline: 0;
+}
+
+.search input[type="submit"]
+{
+	border: 0px;
+	background: none;
+	background-color: #48c774;
+	color: #fff;
+	float: right;
+	padding: 10px;
+	border-radius-top-right: 5px;
+	-moz-border-radius-top-right: 5px;
+	-webkit-border-radius-top-right: 5px;
+	border-radius-bottom-right: 5px;
+	-moz-border-radius-bottom-right: 5px;
+	-webkit-border-radius-bottom-right: 5px;
+        cursor:pointer;
+}
+
+/* ===========================
+   ====== Medua Query for Search Box ======
+   =========================== */
+
+@media only screen and (min-width : 150px) and (max-width : 780px)
+{
+	{}
+	.search
+	{
+		width: 95%;
+		margin: 0 auto;
+	}
+
+}
+    .pagination-link active{
+
+    }
+    .notification.is-primary {
+    background-color: whitesmoke;
+    color: black;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    }
+    .content{
+      text-decoration: none;
+    }
+    .notification a:not(.button):not(.dropdown-item) {
+    color: blue;
+    text-decoration: NONE;
+    margin-right: 20px;
+     }
+
+     span { font-size: 1.5em;}
+     span b { font-size:70%; font-weight: Normal }
+     .input, .textarea {
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    width: 100%;
+    margin-left: 280px;
+}
+
+}
+
+</style>
+<center>
+<div class="container py-5">
+       <div class="search">
+				<form class="search-form">
+					<input type="text" name="queryhtml" placeholder="Search Questions...">
+					<input type="submit" value="Search">
+				</form>
+			</div>
+</div>
+</center>
+<!--- Question List -->
+{% for i in quest %}
+<div class="container">
+  <div class="notification is-primary">
+   <div class="card">
+  <header class="card-header">
+
+      <h4 class="subtitle is-4" ><a href="ask/detail/{{i.id}}" class= "content"> <p class="card-header-title">{{i.title}}</p></a> </h4>
+
+  </header>
+      <div class="card-content">
+      <p class="content">    <span>Detail:   <b>{{i.detail}}</b></span> </p>
+      <p>
+        <a href="/{{i.user.username}}" class= "content"> {{i.user.username}}</a>
+        <a href="#" class= "content">{{i.answer_set.count}} Answers</a>
+        <a href="#" class="content">{{i.total_comments}} Comments</a>
+        {% if user.is_authenticated and user == i.user %}
+        <a href="/askcrowd/ask/ask-question/{{i.id}}" class="content"> [Edit] </a>
+        <a href="/askcrowd/ask/{{i.id}}" class="content"> [Delete] </a>
+          {% endif %}
+      </p>
+    </div>
+        <div class="card-content"> {{i.add_time}} </div>
+   </div>
+
+  </div>
+</div> <br>
+{% endfor %}
+
+<!-- Pagination -->
+<br>
+{% if quest.has_other_pages %}
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    {% if quest.has_previous %}
+  <a class="pagination-previous" href="?page={{quest.previous_page_number}}">Previous</a>
+    {% endif %}
+    {% if quest.has_next %}
+  <a class="pagination-next" href="?page={{quest.next_page_number}}">Next page</a>
+    {% endif %}
+  <ul class="pagination-list">
+  {% for j in quest.paginator.page_range %}
+      {% if quest.number == j %}
+      <li><a class="pagination-link is-current" href="#">{{j}}</a></li>
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+      {% else %}
+    <li><a class="pagination-link" href="?page={{j}}">{{j}}</a></li>
+      {% endif %}
+  {% endfor %}
+  </ul>
+
+</nav>
+{% endif %}
+
+
+
+
+
+{% endblock %}
+

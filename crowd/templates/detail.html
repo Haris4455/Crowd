@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{quests.title}}{% endblock %}
+{% block content %}
+<style>
+    .img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+</style>
+
+<!-- Question List-->
+ <div class="container">
+     <h2 class="subtitle is-2"> {{quests.title}}</h2>
+     <p> {{quests.detail}} </p>
+         {% if quests.image %}
+         <p> <a href= '/media/{{quests.image}}' > <img class="img" src='/media/{{quests.image}}'> </a> </p>
+        {% endif %}
+     <span style="margin-right: 4px"> {{quests.add_time}} </span>
+     <a href="/{{quests.user.username}}" class="value"> {{quests.user.username}} </a>
+             <p>
+
+                 tags:
+                 {% for tag in tags %}
+                 <span class="tag is-primary">
+                    <a href="/askcrowd/ask/tag/{{tag|slugify}}"  class="value" style="color: white">{{tag}}</a>
+                 </span>
+                 {% endfor %}
+             </p>
+     <hr/>
+     {% for answer in answers %}
+     <div class="box">
+             <div class="upvote">
+                 <strong class="upvote-count-{{answer.id}}"> {{answer.upvote_set.count}} </strong> <br/>
+                     <span class="has-text-success">
+                         <i class="fa fa-arrow-up fa-2x upvote-click" style="margin-right: 30px" data-answer="{{answer.id}}"></i>
+                     </span>
+             </div>
+
+             <div class="downvote" style="margin-top: 5px">
+                     <span class="has-text-danger">
+                         <i class="fa fa-arrow-down fa-2x downvote-click" data-answer="{{answer.id}}"></i>
+                     </span> <br/>
+                 <strong class="downvote-count-{{answer.id}}"> {{answer.downvote_set.count}} </strong>
+             </div>
+
+            <span> Posted on: {{answer.add_time}}</span>
+             <h5>
+                 <p style="color: red;">Answer: </p>   {{answer.details}}
+             </h5>
+             <p>
+                 <a href="#" style="margin-right: 20px; text-decoration: none"> {{answer.user.username}} </a>
+                 <span style="margin-right: 20px; text-decoration: none"> <span class="comment-count-{{answer.id}}"> {{answer.comment_set.count}} </span > comments </span>
+                 {% if user.is_authenticated and user == answer.user %}
+                 <a href="/askcrowd/ask/update/{{answer.id}}" style="margin-right: 20px; text-decoration: none"> Edit </a>
+                 <a href="/askcrowd/ask/detail/delete/{{answer.id}}" style="margin-right: 20px; text-decoration: none"> Delete </a>
+                 {% endif %}
+     </div>
+
+
+
+
+
+                  <!--Comment Section Start-->
+     <div class="box">
+             <h3 class="subtitle is-3" style="margin: 2px"> Comments: </h3> <br/>
+             <div class="comment-wrapper-{{answer.id}}">
+                {% for comment in answer.comment_set.all %}
+                 <div class="card">
+                     <div class="card-content">
+                        <p> {{comment.comment}} </p>
+
+                        <p>
+                     <a href="/{{comment.user.username}}" style="margin-left:15px; text-decoration: none"> {{comment.user.username}} </a>
+                       </p>
+                 </div>
+             </div> <br/>
+                 {% endfor %}
+             </div>
+     </div>
+
+         <!-- Comment Form -->
+              <br>
+         <div class="card" style="width: 50rem; margin-left: 200px; ">
+                <h6 class="card-header"> Add Comment </h6>
+                <div class="card-body">
+                 <textarea class="form-control comment-text-{{answer.id}}" style="margin: 0px; width: 798px; height: 60px;"></textarea>
+                 <button type="button" data-answer="{{answer.id}}" class="button is-success"> Submit </button>
+                </div>
+            </div>
+
+     </div>
+     <hr/>
+        {% endfor %}
+
+             </div>
+
+
+    <!-- Answer Form -->
+ <div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+
+             <h5 class="card-header"> Write Answer </h5>
+            <table class="table table-bordered">
+            <form method="POST">
+                {% csrf_token %}
+
+                    <tr><th><label for="id_details">Details:</label></th><td><textarea name="details" cols="170" rows="10" required id="id_details">
+</textarea></td></tr>
+                    <tr>
+                        <td colspan="2">
+                            <button class="button is-success" type="submit" id="button-addon2">Submit</button>
+                        </td>
+                    </tr>
+            </form>
+                </table>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+  <script src="{% static 'ask/jquery-3.6.0.min.js' %}"> </script>
+ <script>
+          $(document).ready(function(){
+     $(".button").on('click',function(){
+     var _answerid=$(this).data('answer');
+     var _comment=$(".comment-text-"+_answerid).val();
+     $.ajax({
+       url:"/askcrowd/ask/detail/save-comment",
+       type: "post",
+       data:{
+         comment: _comment,
+         answerid: _answerid,
+         csrfmiddlewaretoken:"{{csrf_token}}"
+       },
+       dataType:'json',
+       beforeSend:function(){
+          $(".save-comment").addClass('disabled').text('saving...');
+       },
+       success:function(res){
+         if(res.bool==true){
+           $(".comment-text-"+_answerid).val('');
+           // Append Element
+           var _html='  <div class="card animate__animated animate__bounce">\
+                     <div class="card-body">\
+                        <p>'+_comment+'</p>\
+                      <p>\
+                     <a href="#" style="margin-left:15px; text-decoration: none"> {{request.user}} </a>\
+                       </p>\
+                 </div>\
+             </div>';
+             $(".comment-wrapper-"+_answerid).append(_html);
+             var prevCount=$(".comment-count-"+_answerid).text();
+             $(".comment-count-"+_answerid).text(parseInt(prevCount)+1);
+         }
+         $(".save-comment").removeClass('disabled').text('submit');
+       },
+     })
+     });
+
+
+
+
+     // upvote
+     $(".upvote-click").on('click', function(){
+       var answerid = $(this).data('answer');
+       // Ajax
+            $.ajax({
+       url:"/askcrowd/ask/detail/save-upvote",
+       type: "post",
+       data:{
+         answerid: answerid,
+         csrfmiddlewaretoken:"{{csrf_token}}"
+       },
+       dataType:'json',
+       success:function(res){
+         var _prevupvote = $(".upvote-count-"+answerid).text();
+         var _prevdownvote = $(".downvote-count-"+answerid).text();
+         if(res.bool==true){
+             $(".upvote-count-"+answerid).text(parseInt(_prevupvote)+1);
+             if(_prevdownvote > 0){
+             $(".downvote-count-"+answerid).text(parseInt(_prevdownvote)-1);
+             }
+         }
+         else{
+            $(".upvote-count-"+answerid).text(parseInt(_prevupvote)-1);
+         }
+       }
+       });
+
+     });
+
+
+
+
+     // downvote
+   $(".downvote-click").on('click', function(){
+
+       var answerid = $(this).data('answer');
+
+       // Ajax
+            $.ajax({
+       url:"/askcrowd/ask/detail/save-downvote",
+       type: "post",
+       data:{
+         answerid: answerid,
+         csrfmiddlewaretoken:"{{csrf_token}}"
+       },
+       dataType:'json',
+       success:function(res){
+         var _prevdownvote = $(".downvote-count-"+answerid).text();
+         var _prevupvote = $(".upvote-count-"+answerid).text();
+         if(res.bool==true){
+             $(".downvote-count-"+answerid).text(parseInt(_prevdownvote)+1);
+             if(_prevupvote > 0){
+             $(".upvote-count-"+answerid).text(parseInt(_prevupvote)-1);
+             }
+         }
+         else{
+           $(".downvote-count-"+answerid).text(parseInt(_prevdownvote)-1);
+         }
+       }
+       });
+
+     });
+
+
+     });
+ </script>
+ {% endblock %}

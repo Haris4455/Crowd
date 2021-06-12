@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crowd</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ask/animate.min.css' %}" />
+  </head>
+  <body style="background-color:#f1f2f4;">
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="">
+      <img src="{% static 'img/usa.png' %}" width="64" height="64">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="{% url 'index' %}" class="navbar-item">
+        <i class="material-icons">home</i>
+        Home
+      </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+          AskCrowd
+        </a>
+          <div  class="navbar-dropdown">
+        <a href="{% url 'ask' %}" class="navbar-item">
+          <i style="color: green;" class="material-icons">group</i>
+          <strong>Home</strong>
+        </a>
+
+      <a href="/askcrowd/ask/ask-question" class="navbar-item">
+          <i style="color: green;" class="material-icons">perm_media</i>
+          <strong>Ask</strong>
+        </a>
+          </div>
+        </div>
+
+      <a href="{% url 'usersearch1' %}"class="navbar-item">
+        <i class="material-icons">search</i>
+         Search User
+        </a>
+
+      <a href="{% url 'show-notifications' %}" class="navbar-item">
+        <i class="material-icons">notifications</i>
+        Notifications
+        {% if count_notifications %}
+          <span class="badge">{{ count_notifications }}</span>
+        {% endif %}
+      </a>
+
+      <a href="{% url 'profile' request.user %}" class="navbar-item">
+        <i class="material-icons">face</i>
+        Profile - <strong>{{ request.user }}</strong>
+      </a>
+
+
+
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Settings
+        </a>
+
+        <div  class="navbar-dropdown">
+          <a href="{% url 'change_password' %}" class="navbar-item">
+            Change password
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <a class="navbar-item">
+            Report an issue
+          </a>
+          <hr class="navbar-divider">
+          <a href="{% url 'logout' %}" class="navbar-item">
+            Log out
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+      {% block banner %}
+      {% endblock %}
+
+  <section class="section">
+    <div class="container">
+
+      {% block content %}
+      {% endblock %}
+
+
+      {% block pagination %}
+      {% endblock %}
+
+    </div>
+  </section>
+
+
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  <script src="{% static 'js/slider.js' %}"></script>
+</html>

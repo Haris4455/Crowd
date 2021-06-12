@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Ask Question {% endblock %}
+{% block content %}
+<style>
+element.style {
+    margin: 0px;
+    height: 35px;
+    width: 265px;
+}
+.container{
+    width: fit-content;
+}
+form.textarea{
+    cols:100px
+
+}
+</style>
+
+<h3 class="subtitle is-3" > <p class="has-text-centered "> ASK QUESTION </p>  </h3>
+{% load static %}
+<center>
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            {% for msg in messages %}
+            <p class="text-success">{{msg}}</p>
+            {% endfor %}
+            <table class="table table-bordered">
+            <form method="POST" action="" enctype="multipart/form-data">
+               {% csrf_token %}
+
+                    {{form.as_table}}
+                    <tr>
+                        <td colspan="2">
+                            <button class="button is-success" type="submit" id="button-addon2">Submit</button>
+                        </td>
+                    </tr>
+            </form>
+                </table>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
