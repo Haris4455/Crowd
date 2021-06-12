@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c0f82c-b12e-4e22-ad02-ec3bb5842a35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowd/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowd/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finduser/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/finduser/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
