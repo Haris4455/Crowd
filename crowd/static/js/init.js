@@ -8,7 +8,7 @@ $(document).ready(function(){
 		var storyid = event.currentTarget.name;
 
 		$.ajax({
-			type: 'GET',
+			type: 'POST',
 			url: 'http://127.0.0.1:8000/stories/showmedia/'+ storyid,
 			dataType: 'json',
 

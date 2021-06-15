@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="98c0f82c-b12e-4e22-ad02-ec3bb5842a35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/static/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/static/js/init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowd/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/user_13/profile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/user_13/profile.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stories/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stories/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
