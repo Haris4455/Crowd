@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 #Task to check the stories date
 @shared_task
 def CheckStoriesDate():
-	exp_date = datetime.now() - timedelta(seconds=1)
+	exp_date = datetime.now() - timedelta(minutes=5)
 	old_stories = Story.objects.filter(posted__lt=exp_date)
 	old_stories.update(expired=True)
 	print("Stories updated")
