@@ -8,7 +8,7 @@ $(document).ready(function(){
 		var storyid = event.currentTarget.name;
 
 		$.ajax({
-			type: 'post',
+			type: 'GET',
 			url: 'https://usacrowd.herokuapp.com/stories/showmedia/'+ storyid,
 			dataType: 'json',
 
