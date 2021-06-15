@@ -38,7 +38,7 @@ class Tag(models.Model):
 
 class PostFileContent(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='content_owner')
-	file = models.FileField(upload_to=user_directory_path)
+	file = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
 
 class Post(models.Model):
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

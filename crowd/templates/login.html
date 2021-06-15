@@ -24,24 +24,18 @@
 <style>
   .footer {
     background-color: #00d1b2;
-    padding: 1rem 1rem 0.5rem;
+    padding:1rem 1rem 0.5rem;
     color:#fff
 }
 </style>
   <body style="background-color:#f1f2f4;">
-
-
-  <section class="section">
-    <div class="container">
-
-<div class="columns is-mobile has-text-centered">
-  <div class="column is-half is-offset-one-quarter">
-
-    <div class="card">
-    <div class="card-content">
-
-          <form method="post" action="" role="form">
+  <center>
+      <br>
+      <br>
+<div class="card" style="max-width: 60%;">
+    <form method="post" action="" role="form">
           {% csrf_token %}
+        <br>
            <h3 class="title is-4">Crowd</h3>
            <h3 class="title is-3">Login</h3>
 
@@ -87,20 +81,13 @@
      <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
 
 </form>
+  <div class="card-content">
 
-
-
-    </div>
-    </div>
-
-
-
-  </div>
 </div>
-
-
-    </div>
-  </section>
+</div>
+      <br>
+      <br>
+</center>
 
   </body>
 <footer class="footer $footer-background-color  hsl(22, 12%, 98%)" >
@@ -112,4 +99,3 @@
   </div>
 </footer>
 </html>
-

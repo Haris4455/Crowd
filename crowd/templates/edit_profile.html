@@ -20,6 +20,13 @@
                 {{ form.picture }}
               </div>
           </div>
+        {% if messages %}
+          {% for messa in messages %}
+              <div class="alert alert-success" role="alert">
+                {{messa}}
+              </div>
+              {% endfor %}
+            {% endif %}
 
           <div class="field">
               <label class="label is-medium">First name</label>

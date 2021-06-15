@@ -120,10 +120,12 @@
     </figure>
   {% else %}
     <a href="{{ post.get_absolute_url }}">
-      <video width="640" controls="controls" preload="metadata">
-        <source src="{{ post.content.first.file.url }}#t=0.5" type="video/mp4">        
-      </video>      
-    </a>
+      <figure class="image is-4by3">
+      <a href="{{ post.get_absolute_url }}">
+        <img src="{{ post.content.first.file.url }}" alt="Placeholder image">
+      </a>
+    </figure>
+
   {% endif %}
 
 

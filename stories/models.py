@@ -13,7 +13,7 @@ def user_directory_path(instance, filename):
 
 class Story(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='story_user')
-	content = models.FileField(upload_to=user_directory_path)
+	content = models.ImageField(upload_to=user_directory_path)
 	caption = models.TextField(max_length=50)
 	expired = models.BooleanField(default=True)
 	posted = models.DateTimeField(auto_now_add=True)

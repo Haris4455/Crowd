@@ -24,11 +24,11 @@
             </a>
           </figure>
         {% else %}
-          <a href="{{ cont.get_absolute_url }}">
-            <video width="640" controls="controls" preload="metadata">
-              <source src="{{ cont.file.url }}#t=0.5" type="video/mp4">        
-            </video>      
-          </a>
+           <figure class="image is-4by3">
+            <a href="{{ cont.get_absolute_url }}">
+              <img src="{{ cont.file.url }}" alt="Placeholder image">
+            </a>
+          </figure>
         {% endif %}
       </div>
     {% endfor %}
