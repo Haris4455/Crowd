@@ -42,4 +42,4 @@ def ShowMedia(request, stream_id):
 
 	stories_list = list(media_st)
 
-	return JsonResponse(stories_list, safe=False)
+	return JsonResponse(stories_list, safe=True)
