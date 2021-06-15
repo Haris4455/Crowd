@@ -10,7 +10,6 @@ $(document).ready(function(){
 		$.ajax({
 			type: 'post',
 			url: 'https://usacrowd.herokuapp.com/stories/showmedia/'+ storyid,
-			data:{{csrfmiddlewaretoken:"{{csrf_token}}"}},
 			dataType: 'json',
 
 			success: function(data){

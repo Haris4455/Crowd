@@ -36,11 +36,10 @@ def NewStory(request):
 
 
 def ShowMedia(request, stream_id):
-	if request.method=='POST':
-		stories = StoryStream.objects.get(id=stream_id)
+	stories = StoryStream.objects.get(id=stream_id)
 
-		media_st = stories.story.all().values()
+	media_st = stories.story.all().values()
 
-		stories_list = list(media_st)
+	stories_list = list(media_st)
 
-		return JsonResponse(stories_list, safe=False)
+	return JsonResponse(stories_list, safe=False)
