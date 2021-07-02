@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c0f82c-b12e-4e22-ad02-ec3bb5842a35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Crowd.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowd/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowd/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowd/templates/notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/direct/view_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/direct/view_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/newpost.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/newpost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/newstory.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/newstory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/post_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowd/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowd/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowd/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/registration/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/registration/password_reset_email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1tZSD2TzAhx0rpKwk9dFVOkDIKB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

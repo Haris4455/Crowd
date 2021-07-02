@@ -111,7 +111,7 @@ def Signup(request):
 			link=reverse('activate',kwargs={'uidb64':uidb64,'token':account_activation_token.make_token(user)})
 			activate_url='http://'+domain+link
 			email_subject='Account Activation Email'
-			email_body='Hi '+user.username+' Please use this link to verify your account\n'+ activate_url
+			email_body='Hi '+user.username+' JUST ONE MORE STEP AHEAD\nPlease use this link to verify your account\n'+ activate_url +' Thank You for Registering.\nYour sincerely,\nThe Crowd Team.'
 			email = EmailMessage(
 				email_subject,
 				email_body,

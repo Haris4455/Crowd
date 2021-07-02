@@ -79,18 +79,12 @@
   <div class="card">
   <div class="card-image">
 
-  {% if post_item.content.first.file.name|slice:"-3:" == 'jpg' or post_item.content.first.file.name|slice:"-3:" == 'png' %}
+  {% if post_item.content.first.file.name|slice:"-3:" == 'jpg' or post_item.content.first.file.name|slice:"-3:" == 'JPG' or post_item.content.first.file.name|slice:"-3:" == 'png' or post_item.content.first.file.name|slice:"-3:" == 'PNG' %}
     <figure class="image is-5by3">
       <a href="{{ post_item.get_absolute_url }}">
         <img src="{{ post_item.content.first.file.url }}" alt="Placeholder image">
       </a>
     </figure>
-  {% else %}
-    <a href="{{ post_item.get_absolute_url }}">
-      <video width="1080" controls="controls" preload="metadata">
-        <source src="{{ post_item.content.first.file.url }}#t=0.5" type="video/mp4">
-      </video>      
-    </a>
   {% endif %}
 
   </div>
@@ -139,5 +133,4 @@
 
 </div>
 </div>
-
 {% endblock %}
