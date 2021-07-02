@@ -76,22 +76,12 @@
           <i style="color: green;" class="material-icons">photo_filter</i>
           <strong>New Story</strong>
         </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            <i style="color: green;" class="material-icons">group</i>
-          AskCrowd
-        </a>
-          <div  class="navbar-dropdown">
-        <a href="{% url 'ask' %}" class="navbar-item">
-          <strong>Home</strong>
+      <a href="{% url 'ask' %}" class="navbar-item">
+          <i style="color: green;" class="material-icons">group</i>
+          <strong>Ask Crowd</strong>
         </a>
 
-      <a href="/askcrowd/ask/ask-question" class="navbar-item">
-          <strong>Ask</strong>
-        </a>
-          </div>
-        </div>
+
 
 
       <div class="navbar-item has-dropdown is-hoverable">
@@ -103,10 +93,10 @@
           <a href="{% url 'change_password' %}" class="navbar-item">
             Change password
           </a>
-          <a class="navbar-item">
+          <a href="{% url 'contact' %}" class="navbar-item">
             Contact
           </a>
-          <a class="navbar-item">
+          <a href="{% url 'report_issue' %}" class="navbar-item">
             Report an issue
           </a>
           <hr class="navbar-divider">

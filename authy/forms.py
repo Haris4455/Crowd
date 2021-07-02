@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.forms import ModelForm, Textarea
 from django.core.exceptions import ValidationError
-from authy.models import Profile
+from authy.models import Profile, Report_Issue
 
 def ForbiddenUsers(value):
 	forbidden_users = ['admin', 'css', 'js', 'authenticate', 'login', 'logout', 'administrator', 'root',
@@ -90,3 +91,9 @@ class EditProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
 		fields = ('picture', 'first_name', 'last_name', 'location', 'url', 'profile_info')
+
+class ReportForm(forms.ModelForm):
+	class Meta:
+		model = Report_Issue
+		fields = ('Subject', 'Report')
+		widgets = {'Report': Textarea(attrs={'cols': 100, 'rows': 20}), }

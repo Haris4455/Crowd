@@ -66,7 +66,8 @@ class Follow(models.Model):
 		sender = follow.follower
 		following = follow.following
 		notify = Notification(sender=sender, user=following, notification_type=3)
-		notify.save()
+		if sender != following:
+		 notify.save()
 
 	def user_unfollow(sender, instance, *args, **kwargs):
 		follow = instance
@@ -78,7 +79,7 @@ class Follow(models.Model):
 
 class Stream(models.Model):
     following = models.ForeignKey(User, on_delete=models.CASCADE,null=True, related_name='stream_following')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)   
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
     date = models.DateTimeField()
 
@@ -99,7 +100,8 @@ class Likes(models.Model):
 		post = like.post
 		sender = like.user
 		notify = Notification(post=post, sender=sender, user=post.user, notification_type=1)
-		notify.save()
+		if like.user != post.user:
+		 notify.save()
 
 	def user_unlike_post(sender, instance, *args, **kwargs):
 		like = instance

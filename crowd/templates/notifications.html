@@ -11,8 +11,8 @@
 
 {% for notification in notifications %}
 
-
 {% if notification.notification_type == 2 %}
+
       <div class="notification">
       <a href="{% url 'delete-notification' notification.id %}" class="delete"></a>
 
@@ -48,6 +48,8 @@
 
 
 {% if notification.notification_type == 3 %}
+
+
       <div class="notification">
       <a href="{% url 'delete-notification' notification.id %}" class="delete"></a>
 
@@ -74,6 +76,7 @@
 
       </div>
 {% endif %}
+
 
 
 <!-- FOR LIKE --->
@@ -111,7 +114,11 @@
 {% endif %}
 
 
+
+
+
 {% endfor %}
+
 <!-- FOR LIKES --->
 
 

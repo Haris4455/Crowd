@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c0f82c-b12e-4e22-ad02-ec3bb5842a35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/crowd/static/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/static/js/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Crowd.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authy/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authy/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +40,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CrowdMY version" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

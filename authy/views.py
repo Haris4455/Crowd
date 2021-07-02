@@ -1,12 +1,12 @@
 from django.views import View
 from django.shortcuts import render, redirect, get_object_or_404
-from authy.forms import SignupForm, ChangePasswordForm, EditProfileForm
+from authy.forms import SignupForm, ChangePasswordForm, EditProfileForm, ReportForm
 from django.contrib.auth.models import User
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 
-from authy.models import Profile
+from authy.models import Profile, Report_Issue
 from post.models import Post, Follow, Stream
 from django.db import transaction
 from django.template import loader
@@ -229,3 +229,16 @@ class VerificationView(View):
 			pass
 
 		return redirect('login')
+
+
+def report(request):
+
+	form = ReportForm
+	if request.method == 'POST':
+		reportForm = ReportForm(request.POST, request.FILES)
+		if reportForm.is_valid():
+			reportForm = reportForm.save(commit=False)
+			reportForm.user = request.user
+			reportForm.save()
+			return HttpResponseRedirect('/post/')
+	return render(request, 'report.html',{'form':form})

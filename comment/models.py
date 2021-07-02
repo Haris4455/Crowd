@@ -1,6 +1,6 @@
 from django.db import models
 from post.models import Post
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
 from notifications.models import Notification
 
 from django.db.models.signals import post_save, post_delete
@@ -19,7 +19,8 @@ class Comment(models.Model):
 		text_preview = comment.body[:90]
 		sender = comment.user
 		notify = Notification(post=post, sender=sender, user=post.user, text_preview=text_preview ,notification_type=2)
-		notify.save()
+		if sender != post.user:
+		 notify.save()
 
 	def user_del_comment_post(sender, instance, *args, **kwargs):
 		like = instance

@@ -57,3 +57,11 @@ class UserOTP(models.Model):
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
 	time_st = models.DateTimeField(auto_now = True)
 	otp = models.SmallIntegerField()
+
+class Report_Issue(models.Model):
+	user = models.ForeignKey(User, on_delete = models.CASCADE)
+	Subject = models.CharField(max_length=350)
+	Report = models.TextField()
+
+	def __str__(self):
+		return self.Subject

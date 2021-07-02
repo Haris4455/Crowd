@@ -88,6 +88,7 @@
 
 </style>
 <center>
+
 <div class="container py-5">
        <div class="search">
 				<form class="search-form">
@@ -96,7 +97,12 @@
 				</form>
 			</div>
 </div>
-</center>
+        <div class="container py-5">
+    <td colspan="2">
+        <button class="button is-success" type="submit" id="button-addon2"> <a href="/askcrowd/ask/ask-question" style="color: white">Ask Question </a> </button>
+    </td>
+        </div>
+ </center>
 <!--- Question List -->
 {% for i in quest %}
 <div class="container">
@@ -155,4 +161,3 @@
 
 
 {% endblock %}
-

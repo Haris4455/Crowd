@@ -18,6 +18,9 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from .import views
+from crowd.views import contact
+
+
 
 
 from authy.views import UserProfile, UserProfileFavorites, follow
@@ -31,6 +34,7 @@ urlpatterns = [
     path('direct/', include('direct.urls')),
     path('askcrowd/', include('askcrowd.urls')),
     path('stories/', include('stories.urls')),
+    path('contact/', contact, name='contact'),
     path('notifications/', include('notifications.urls')),
     path('<username>/', UserProfile, name='profile'),
     path('<username>/saved', UserProfile, name='profilefavorites'),
